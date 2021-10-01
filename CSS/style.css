@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainContainer{
+    display: grid;
+    grid-template-columns: 100px 400px 100px 300px 100px;
+    grid-template-rows: 100px 800px 100px;
+    grid-template-areas:
+    "west emptyL center north north"
+    "west emptyL center emptyR east"
+    "west south south emptyR east";
+    height: 1000px;
+    width: 1000px;
+    background-color: black;
+}
+
+.mainContainer > div{
+    display: flex;
+}
+
+.mainContainer > img{
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.vertical{
+    flex-direction: column;
+}
+
+.strWest{
+    grid-area: west;
+}
+
+.emptyLeft{
+    grid-area: emptyL;
+}
+
+.strCenter{
+    grid-area: center;
+}
+
+.strNorth{
+    grid-area: north;
+}
+
+.emptyRight{
+    grid-area: emptyR;
+}
+
+.strSouth{
+    grid-area: south;
+}
+
+.east{
+    grid-area: strEast;
+}
+
+.imageContainer{
+    display: flex;
+    position: relative;
+}
+
+.tank{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.strWest .imageContainer:hover .tank{
+    transform: rotate(270deg);
+    display: block;
+}
+
+.strSouth .imageContainer:hover .tank{
+    transform: rotate(180deg);
+    display: block;
+}
+
+.strCenter .imageContainer:hover .tank{
+    transform: rotate(90deg);
+    display: block;
+}
+
+.strNorth .imageContainer:hover .tank{
+    transform: rotate(180deg);
+    display: block;
+}
+
+.strEast .imageContainer:hover .tank{
+    transform: rotate(270deg);
+    display: block;
+}
+
+
+
